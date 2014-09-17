@@ -1,0 +1,1 @@
+{title:'Beat 小游戏',content:'<p>Beat 小游戏</p><p>更新记录 1.1</p><p>1、增加SCORE基数，人偶model中增加分值，每次发射炮弹会减少分值。</p><p>2、roll系统化每次roll到3个相同的，增加100分。</p><p>3、改进转盘系统，显示的更加突出，更大。</p><p>4、增加option选项，把游戏中的参数都保存在option中可以设置，增强游戏每次不同指标的修改。</p><p>5、优化分辨率，制作320 * 480版本，用于iPhone 网页版本。640 * 960 分辨率的体验差。</p><p>试玩地址: http://www.html5lab.org/data/demo/beat/index.html</p>',selectedNav:'1'}

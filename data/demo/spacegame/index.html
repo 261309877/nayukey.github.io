@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Space</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script type="text/javascript" src="space.js"></script>
+    <script type="text/javascript">
+        window.addEventListener("load", handleWindowLoaded, false);
+
+        function handleWindowLoaded() {
+            var mySpace = new Space();
+        }
+    </script>
+</head>
+<body>
+    <div style="width:1000px;margin:20px auto;">
+    	<canvas id="mySpace" width="1000" height="500" style="cursor: none;"></canvas>
+        <div id="sounds" style="display: none;"></div>
+    </div>
+</body>
+</html>

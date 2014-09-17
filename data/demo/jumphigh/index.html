@@ -1,0 +1,31 @@
+<!doctype>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Jump High</title>
+        <link type="text/css" href="common.css" rel="stylesheet"/>
+		<script type="text/javascript" src="jump.js"></script>
+	</head>
+	<body>
+    	<div style="position:relative;width:322px;height:482px;margin: 10px 200px;overflow: hidden;">
+            <div id="startPage" class="gameCover" style="display:block;z-index: 10;">
+                <div class="animateStar"><span class="st1"></span><span class="st2"></span></div>
+                <h1>Jump High</h1>
+                <span class="lightAni"></span>
+                <div id="btnStart" class="gameBtn">Start</div>
+                <div id="btnAbout" class="gameBtn">About</div>
+            </div>
+            <div id="loadingPage" class="gameCover" style="display:none;z-index: 1;">
+                <div class="adLoading"></div>
+            </div>
+            <div id="gameOverPage" class="gameCover" style="display:none;z-index: 1;">
+                <div id="btnRestart" class="gameBtn">Restart</div>
+                <div id="btnFollow" class="gameBtn">Follow</div>
+            </div>
+            <canvas id="myCanvas" width="320" height="480" class="gameBlock" style="display:none;z-index: 1;"></canvas>
+            <div id="audioPool" style="display: none;">
+
+            </div>
+        </div>
+	</body>
+</html>

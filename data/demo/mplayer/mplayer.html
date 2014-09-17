@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="author" content="爱游戏的酱油猫">
+	<meta name="keywords" content="HTML5资源,HTML5学习,HTML5文档,HTML5资料,HTML5教程,HTML5游戏,HTML5案例,WEBGL,HTML5,CANVAS" />
+	<meta name="description" content="HTML5LAB.ORG官网，致力HTML5的交流、分享、共同学习！" />
+	<title>Canvas Audio Player</title>
+	<link type="text/css" rel="stylesheet" href="../../../resources/css/common.css"/>
+	<link type="text/css" rel="stylesheet" href="../../../resources/css/module.css"/>
+	<!--[if lte IE 9]>
+	<link type="text/css" rel="stylesheet" href="../../../resources/css/iefix.css"/>
+    <script type="text/javascript">
+    	var e = "footer, header, nav, section".split(', ');
+     	var i= e.length;
+        while (i--){
+            document.createElement(e[i]);
+        } 
+    </script>
+	<![endif]-->
+	<script type="text/javascript" src="../../../resources/js/common.js"></script>
+    <script type="text/javascript">
+	window.addEventListener("load",handleWindowLoaded,false);
+	
+	var audioElement;
+	var context;
+	
+	function handleWindowLoaded(){
+		audioElement = document.createElement("audio");
+		document.body.appendChild(audioElement);
+		
+		audioElement.setAttribute("src","1.mp3");
+		audioElement.addEventListener("canplaythrough",handleAudioCanPlay,false);		
+	}
+	
+	function handleAudioCanPlay(event){
+		new AudioPlayer();	
+	}
+	
+	var AudioPlayer = function(){
+		if(!document.createElement("canvas").getContext("2d")){
+			return function(){
+				alert("Your Brower does not Support HTML5 Canvas!");
+			}	
+		}
+		
+		function drawScreen(){
+			context.clearRect(0,0,myCanvas.width,myCanvas.height);
+			
+			drawUI.call(that);
+			
+		}
+		
+		function drawUI(){
+			currentTime.x = (audioElement.currentTime / audioElement.duration) * 180 + 100;
+			currentVolume.x = (audioElement.volume / maxVolume) * 50 + 230;
+			var minute = Math.floor(audioElement.currentTime/60);
+			var second = Math.floor(audioElement.currentTime%60);
+			if(minute < 10){
+				minute = "0" + minute.toString();	
+			}
+			if(second < 10){
+				second = "0" + second.toString();	
+			}
+			currentTimeText = (minute).toString() + ':' + (second).toString();
+			//face
+			this.UI.face(myCanvas);
+			//play or pause
+			if(audioElement.paused == false){
+				this.UI.pause();
+				this.UI.stopButton();
+			}else{
+				this.UI.play();	
+				this.UI.stopButtonUnable();
+			}
+			//currentTime
+			this.UI.currentTime(currentTime.x);
+			//volume
+			this.UI.currentVolume(currentVolume.x);
+			//loop
+			if(audioElement.loop == false){
+				this.UI.loop();
+			}else {
+				this.UI.loopSelect();
+			}
+			//Time Text
+			this.UI.currentTimeText(currentTimeText);
+		}
+		
+		function canvasMouseDown(event){
+			event.preventDefault();
+			mousePos.x = event.offsetX;
+			mousePos.y = event.offsetY;	
+			
+			console.log(mousePos.x +',' +mousePos.y);
+			if(mousePos.x >= playPos.x1 && mousePos.y >= playPos.y1 && mousePos.x <= playPos.x2 && mousePos.y <= playPos.y2){
+				//hit play or pause	
+				if(audioElement.paused == false){
+					audioElement.pause();
+				} else {
+					audioElement.play();	
+				}
+			} else if((mousePos.x - currentTime.x) * (mousePos.x - currentTime.x) + (mousePos.y - currentTime.y) * (mousePos.y - currentTime.y) <= (currentTime.r * currentTime.r)){
+				//hit currentTime
+				console.log("hit");
+				isHitCurrentTime = true;
+				myCanvas.addEventListener("mousemove",handleMouseMove,false);
+				myCanvas.addEventListener("mouseup",handleMouseUp,false);
+				
+			} else if(mousePos.x >= loopPos.x1 && mousePos.y >= loopPos.y1 && mousePos.x <= loopPos.x2 && mousePos.y <= loopPos.y2){
+				//hit loop
+				if(audioElement.loop == false){
+					audioElement.loop = true;
+				}else {
+					audioElement.loop = false;
+				}	
+				
+			} else if(mousePos.x >= currentVolume.x && mousePos.y >= currentVolume.y && mousePos.x <= currentVolume.x + currentVolume.width && mousePos.y <= currentVolume.y + currentVolume.height){
+				//hit currentVolume
+				console.log("hit volume");
+				isHitCurrentVolume = true;
+				myCanvas.addEventListener("mousemove",handleMouseMove,false);
+				myCanvas.addEventListener("mouseup",handleMouseUp,false);
+			} else if(mousePos.x >= stopPos.x1 && mousePos.y >= stopPos.y1 && mousePos.x <= stopPos.x2 && mousePos.y <= stopPos.y2){
+				//hit Stop
+				if(audioElement.paused == false){
+					audioElement.pause();
+					audioElement.currentTime = 0;
+				}	 
+			}
+		}
+		
+		function handleMouseMove(event){
+			event.preventDefault();
+			currentPos.x = event.offsetX;
+			currentPos.y = event.offsetY;
+			
+			if(isHitCurrentTime == true){
+				if(currentPos.x < 100){
+					audioElement.currentTime = 0;	
+				}else if(currentPos.x > 280){
+					audioElement.currentTime = audioElement.duration;
+				}else{
+					currentTime.x = currentPos.x;
+					audioElement.currentTime = ((currentTime.x - 100) / 180) * audioElement.duration;
+				}
+			}
+			
+			if(isHitCurrentVolume == true){
+				if(currentPos.x < 230){
+					audioElement.volume = 0;	
+				}else if(currentPos.x > 280){
+					audioElement.volume = maxVolume;
+				}else{
+					currentVolume.x = currentPos.x;
+					console.log(((currentVolume.x - 230) / 50) * maxVolume);
+					audioElement.volume = ((currentVolume.x - 230) / 50) * 1;					
+				}
+			}
+		}
+		
+		function handleMouseUp(event){
+			event.preventDefault();
+			audioElement.play();
+			isHitCurrentTime = false;
+			isHItCurrentVolume = false;
+			myCanvas.removeEventListener("mousemove",handleMouseMove,false);
+			myCanvas.removeEventListener("mouseup",handleMouseUp,false);	
+		}
+		
+		var that = this;
+		var myCanvas = document.getElementById("player");
+		context = myCanvas.getContext("2d");
+		var mousePos = {x:0,y:0};
+		var currentPos = {x:0,y:0};
+		var currentTime = {x:100,y:36.5,r:5};
+		var currentVolume = {x:230,y:71.5,width:3,height:10};
+		var playPos = {x1:40,y1:65,x2:50,y2:85};
+		var loopPos = {x1:90,y1:63,x2:110,y2:85};
+		var stopPos = {x1:140,y1:65,x2:160,y2:85};
+		var maxVolume = 1;
+		var currentTimeText;
+		var isHitCurrentTime = false;
+		var isHitCurrentVolume = false;
+		myCanvas.addEventListener("mousedown",canvasMouseDown,false);
+		audioElement.play();
+		
+		window.setInterval(function(){
+			drawScreen();	
+		},33);
+	}
+	
+	AudioPlayer.prototype.UI = {
+		face:function(canvas){
+				//Background
+				context.fillStyle = "rgb(130,190,58)";
+				context.fillRect(0,0,canvas.width,canvas.height);
+				
+				context.fillStyle = "#FFFFFF";
+				context.fillRect(100,35,180,3);
+							
+				context.fillRect(230,75,50,3);
+			},
+		play:function(){
+				context.beginPath();
+				context.fillStyle = "#FFFFFF";
+				context.moveTo(40,65);
+				context.lineTo(50,75);
+				context.lineTo(40,85);			
+				context.fill();
+			},
+		pause:function(){
+				context.fillStyle = "#FFFFFF";
+				context.fillRect(40,66,3,18);
+				context.fillRect(50,66,3,18);
+			},
+		currentTime:function(x){
+				context.fillStyle = "#FFFFFF";
+				context.beginPath();
+				context.arc(x,36.5,5,0,Math.PI * 2,false);
+				context.fill();
+			},
+		currentVolume:function(x){
+				context.fillStyle = "#FFFFFF";
+				context.fillRect(x,71.5,3,10)
+				context.fill();
+			},
+		loop:function(){
+				context.strokeStyle = "#CCCCCC";
+				context.save();
+				context.lineWidth = 2;
+				context.beginPath();
+				context.arc(100,75,8,0,Math.PI * 1.5,false);
+				context.lineTo(94,65);
+				context.moveTo(100,67);
+				context.lineTo(97,73);
+				context.stroke();
+				context.restore();
+			},
+		loopSelect:function(){
+				context.strokeStyle = "#FFFFFF";
+				context.save();
+				context.lineWidth = 2;
+				context.beginPath();
+				context.arc(100,75,8,0,Math.PI * 1.5,false);
+				context.lineTo(94,65);
+				context.moveTo(100,67);
+				context.lineTo(97,73);
+				context.stroke();
+				context.restore();
+			},
+		currentTimeText:function(text){
+				context.save();
+				context.fillStyle = "#FFFFFF";
+				context.font = "28px Microsoft YaHei";
+				context.fillText(text,10,45);
+				context.restore();	
+			},
+		stopButton:function(){
+				context.fillStyle = "#FFFFFF";
+				context.fillRect(140,65,20,20);
+			},
+		stopButtonUnable:function(){
+				context.fillStyle = "#CCCCCC";
+				context.fillRect(140,65,20,20);
+			}
+		
+	}
+	</script>
+</head>
+<body>
+	<!-- header -->
+    <div class="content header-b">
+		<header>
+            <h1 class="logo"><a href="http://www.html5lab.org">HTML5LAB.ORG</a></h1>
+            <nav>
+                <ul id="nav-list" class="nav-list">
+                    <li><a href="http://www.html5lab.org">index</a></li>
+                    <li class="selected"><a href="http://www.html5lab.org/share.html">share</a></li>
+                    <li><a href="http://www.html5lab.org/docs.html">docs</a></li>
+                    <li><a href="http://www.html5lab.org/about.html">about</a></li>
+                </ul>
+            </nav>
+       
+    	</header>
+    </div>
+    <!-- content -->
+    <div class="content">
+        <div class="module">
+        	<div class="topic">
+        		<h1 id="topic-title">Canvas 音乐播放器分享</h1>
+                <div id="topic-content">
+                   <canvas id="player" width="300" height="100" style="margin:50px auto;"></canvas>
+                   <p>Canvas 版本的音乐播放器，其中主要使用了Audio标签来播放歌曲，使用一个setInterval来更新canvas图像，canvas内的事件响应通过addEventListener实现，未来会出一个webAudioContext的版本，谢谢关注~~</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+    	<p>Sina Weibo<a href="http://weibo.com/nayukey">@爱游戏的酱油猫</a><span>html5lab.org 皖ICP备-10205492号</span></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gameBlock{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #CCCCCC;
+}
+
+.gameCover{
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid #CCCCCC;
+    width: 320px;
+    height: 480px;
+}
+
+.gameBtn{
+    position: absolute;
+    width:148px;
+    height:38px;
+    line-height: 40px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    background: #FFFFFF;
+    border-radius: 20px;
+    left:85px;
+    cursor: pointer;
+}
+
+#btnStart{
+    top:270px;
+}
+
+#btnAbout{
+    top:340px;
+}
+
+#btnRestart{
+    top:150px;
+}
+
+#btnFollow{
+    top:250px;
+}
+
+#startPage h1{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top:100px;
+}
+
+.animateStar{
+    position:relative;
+    top:100px;
+    left: -50px;
+}
+
+.animateStar .st1{
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #CCCCCC;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: rolling1;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.animateStar .st2{
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #CCCCCC;
+    -webkit-transform: rotate(45deg);
+    -webkit-transform-origin: 100px 100px;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: rolling2;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes rolling1 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rolling2 {
+  from {
+    -webkit-transform: rotate(45deg);
+  }
+
+  to {
+    -webkit-transform: rotate(405deg);
+  }
+}

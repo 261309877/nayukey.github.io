@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="author" content="爱游戏的酱油猫">
+	<meta name="keywords" content="HTML5资源,HTML5学习,HTML5文档,HTML5资料,HTML5教程,HTML5游戏,HTML5案例,WEBGL,HTML5,CANVAS,HTML5Lab" />
+	<meta name="description" content="HTML5LAB.ORG官网，致力HTML5的交流、分享、共同学习！" />
+	<title>HTML5Lab</title>
+	<link type="text/css" rel="stylesheet" href="resources/css/common.css"/>
+	<link type="text/css" rel="stylesheet" href="resources/css/module.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/mobile.css"/>
+	<!--[if lte IE 9]>
+	<link type="text/css" rel="stylesheet" href="resources/css/iefix.css"/>
+    <script type="text/javascript">
+    	var e = "footer, header, nav, section".split(', ');
+     	var i= e.length;
+        while (i--){
+            document.createElement(e[i]);
+        } 
+    </script>
+	<![endif]-->
+	<script type="text/javascript" src="resources/js/common.js"></script>
+	<script type="text/javascript" src="resources/lab/lab.js"></script>
+</head>
+<body class="mobile">
+	<script type="text/javascript">
+	(function(){
+		if(window.screen.width < 600){
+			document.body.className = "mobile";
+		}else{
+			document.body.className = "web";
+		}	
+	})();
+	</script>
+	<!-- header -->
+    <div class="content header-b">
+		<header>
+            <h1 class="logo"><a href="http://www.html5lab.org">HTML5LAB.ORG</a></h1>
+            <nav>
+                <ul class="nav-list">
+                    <li class="selected"><a href="http://www.html5lab.org">index</a></li>
+                    <li><a href="http://www.html5lab.org/share.html">share</a></li>
+                    <li><a href="http://www.html5lab.org/docs.html">docs</a></li>
+                    <li><a href="http://www.html5lab.org/about.html">about</a></li>
+                </ul>
+            </nav>
+       
+    	</header>
+    </div>
+    <!-- content -->
+    <div class="content">
+        <div class="main">
+        	<!-- main canvas -->
+            <div class="canvas-show">
+                <canvas id="myLab" width="500" height="773">
+                	<img alt="请更新您的浏览器" src="resources/images/fixflask.png"/>
+                </canvas>
+            </div>
+            <!-- title show -->
+            <div class="title-show">
+                <a href="content.html?c=beat" class="box1 size1">
+                	<h4>Beat 小游戏</h4>
+                    <p>正在开发中.....，目前可以参观demo版本</p>
+                </a>
+				<a href="http://www.hiwebgl.com" class="box2 size1">
+                	<h4>HiWebgl</h4>
+                    <p>国内webgl的先驱网站，网站作者对webgl的研究真的是非常的透彻。</p>
+                </a>	
+                <a href="content.html?c=jumphigh" class="box3 size4">
+                	<h4>Jump High小游戏</h4>
+                    <p>Jump High游戏，是一个跳跃的小游戏,进入查看</p>
+                </a>
+                <a href="content.html?c=canvas1" class="box4 size5">
+                	<h4>开始学习 Canvas</h4>
+                    <p>学习CANVAS前的准备</p>
+                </a>
+                <a href="content.html?c=w3c" class="box5 size2">
+                	<h4>HTML5庆典大会</h4>
+                    <p>HTML5开发日暨W3C中国六周年庆典8月18日举行</p>
+                </a>
+                <a href="data/demo/mplayer/mplayer.html" class="box6 size5">
+                	<h4>MPlayer</h4>
+                    <p>Canvas Audio Player</p>
+                </a>
+                <a href="http://www.html5dw.com/" class="box7 size3">
+                	<h4>HTML5 梦工场官网</h4>
+                    <p>HTML5梦工场成立于2012年，旨在搭建开放、自由、互动的交流平台，无论你是草根还是精英，都可以找到实现梦想的舞台。定期在全国9个城市举办线下活动，主打#HTML5 code jam#32小时通过实践快速交流、融入团队，挖掘潜能，历练自我的开发活动。</p>
+                </a>
+                <a href="http://www.frontendcodes.com" class="box8 size4">
+                	<h4>檬檬前端行</h4>
+                    <p>南京檬檬大神的海滩</p>
+                </a>
+                <a href="about.html" class="box9 size5">
+                	<h4>本网站简介</h4>
+                    <p>HTML5lab.org由来</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+    	<p>Sina Weibo<a href="http://weibo.com/nayukey">@爱游戏的酱油猫</a><span>html5lab.org 皖ICP备-10205492号</span></p>
+    </footer>
+</body>
+</html>

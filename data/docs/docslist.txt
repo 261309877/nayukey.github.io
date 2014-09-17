@@ -1,0 +1,1 @@
+{docslist:[{content:'开始学习 Canvas ———— 准备',href:'http://www.html5lab.org/content.html?c=canvas1'},{content:'Canvas 教程 1 ———— 介绍HTML5 Canvas',href:'http://www.html5lab.org/content.html?c=canvas2'}]}

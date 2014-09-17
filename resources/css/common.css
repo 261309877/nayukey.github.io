@@ -1,0 +1,144 @@
+/*
+ Common Css for html5lab.org
+ Created By 爱游戏的酱油猫
+ 2012.7.2
+ Any question, @爱游戏的酱油猫（新浪微博）
+ */
+
+*{
+	margin:0;
+	padding:0;
+	word-wrap:break-word;
+	font-family:'Microsoft YaHei';
+}
+
+h1,h2,h3,h4,h5{
+	font-size:100%;
+}
+
+a{
+	text-decoration:none;
+}
+
+ul,li,ul li{
+	list-style:none;
+}
+
+.web{
+	background:url(../images/body-b.png) 0 0 repeat;
+}
+
+.web .content{
+	width:100%;
+	margin:0 auto;
+}
+
+.web .module{
+	margin:10px auto 0 auto;
+	width:990px;
+	min-height:600px;
+	border-radius:3px;
+	border:1px solid #FFFFFF;
+	box-shadow:1px 1px 1px #d9dbdd;
+	background:-webkit-gradient(linear,left top,left bottom,from(#faf9f9),to(#f4eeee));
+	background:-moz-linear-gradient(top,#faf9f9,#f4eeee);
+	background:-o-linear-gradient(top,#faf9f9,#f4eeee);
+	background:-ms-linear-gradient(top,#faf9f9,#f4eeee);
+}
+
+.web header{
+	position:relative;
+	width:990px;
+	height:50px;
+	margin:0 auto;	
+}
+
+.web .header-b{
+	background:-webkit-gradient(linear,left top,left bottom,from(#54575f),to(#1d1e1f));
+	background:-moz-linear-gradient(top,#54575f,#1d1e1f);
+	background:-o-linear-gradient(top,#54575f,#1d1e1f);
+	background:-ms-linear-gradient(top,#54575f,#1d1e1f);
+}
+
+.web header .logo a{
+	font-size:25px;
+	line-height:50px;
+	color:#ffffff;
+}
+
+.web nav{
+	position:absolute;
+	top:10px;
+	right:0px;	
+}
+
+.web .nav-list li{
+	display:inline-block;
+	width:80px;
+	height:40px;
+	background:url(../images/nav-b.png) 0 10px no-repeat;
+}
+
+.web .nav-list li:first-child{
+	background:none;
+}
+
+.web .nav-list .selected a{
+	border-bottom:3px solid #ff0022;
+}
+
+.web .nav-list li:hover a{
+	border-bottom:3px solid #ff0022;
+}
+
+.web .nav-list li a{
+	display:block;
+	margin:0 auto;
+	width:50px;
+	height:37px;
+	line-height:37px;
+	text-align:center;
+	color:#cccccc;
+}
+
+.web .main{
+	margin:10px auto 0 auto;
+	width:990px;
+	height:780px;
+}
+
+.web .canvas-show{
+	display:inline-block;
+	width:500px;
+	height:773px;
+	border:3px solid #dee3e3;
+	border-radius:3px;
+}
+
+.web footer{
+	width:100%;
+	height:50px;
+	margin-top:15px;
+	border-top:1px solid #e5e5e5;
+	background:-webkit-gradient(linear,left top,left bottom,from(#54575f),to(#333539));
+	background:-moz-linear-gradient(top,#54575f,#333539);
+	background:-o-linear-gradient(top,#54575f,#333539);
+	background:-ms-linear-gradient(top,#54575f,#333539);
+}
+
+.web footer p{
+	text-align:center;
+	color:#999999;
+	text-shadow:0 1px 1px #2a2a2a;
+	line-height:50px;
+}
+
+.web footer p a{
+	margin-left:5px;
+	color:#999999;
+	text-shadow:0 1px 1px #2a2a2a;
+}
+
+.web footer p span{
+	margin-left:40px;
+}

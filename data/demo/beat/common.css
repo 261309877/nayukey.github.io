@@ -1,0 +1,31 @@
+/* 
+Beat Core JavaScript
+Created By Nayukey
+2012.9.17 
+*/
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.game-container{
+	overflow:hidden;
+}
+
+.hide{
+	display:none;
+}
+
+.game-button{
+	width:148px;
+    height:38px;
+    line-height: 40px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    border: 1px solid #CCCCCC;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+

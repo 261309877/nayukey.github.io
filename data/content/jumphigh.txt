@@ -1,0 +1,1 @@
+{title:'Jump High 跳跃小游戏',content:'<p>Jump High游戏，是一个跳跃的小游戏。</p><p>下面有类似岩浆，沼泽，玩家需要操作上下左右按键，跳跃物体摆脱危险。</p><p>游戏内原理很简单，没有贴图。</p><p>试玩地址: http://www.html5lab.org/data/demo/jumphigh/index.html</p>',selectedNav:'1'}

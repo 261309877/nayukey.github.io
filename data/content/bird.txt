@@ -1,0 +1,1 @@
+{title:'Bird 简单物理演示',content:'<p>Bird演示了愤怒的小鸟的基本算法之一</p><p>利用了简单的物理重力和加速度</p><p>试玩地址: http://www.html5lab.org/data/demo/bird/index.html</p>',selectedNav:'1'}
