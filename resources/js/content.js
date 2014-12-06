@@ -57,7 +57,7 @@
 
 						all:function (resp) {
 							// 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
-							document.getElementById("topic-content").innerHTML = json.wexin;
+							document.getElementById("topic-content").innerHTML = json.weixin;
 						}
 					};
 
