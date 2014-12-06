@@ -21,6 +21,13 @@
 
 		if(json.weixin != undefined){
 			if(window.WeixinJSBridge != undefined){
+				var shareData = {
+					desc : '微信分享测试',
+					title : '博客',
+					appid : 0
+				};
+
+
 				document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 					// 分享到朋友圈
 					WeixinJSBridge.on('menu:share:timeline', function(argv) {
