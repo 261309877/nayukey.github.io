@@ -178,8 +178,8 @@
 
 .mobile .topic p{
  font-size:14px;
- margin:15px 0;
- line-height:22px;
+ margin:10px 0;
+ line-height:20px;
 }
 
 .mobile .topic img{
@@ -215,4 +215,5 @@
 
 .mobile .list li{
  margin:10px 0;
+ font-size:12px;
 }
