@@ -1,4 +1,4 @@
-//Common Js for html5lab.org
+//Common Js for nayukey.github.io
 //Created By 爱游戏的酱油猫
 //2012.7.2
 //Any question, @爱游戏的酱油猫（新浪微博）

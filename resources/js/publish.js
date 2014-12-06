@@ -1,4 +1,4 @@
-//Publish Js for html5lab.org
+//Publish Js for nayukey.github.io
 //Created By 爱游戏的酱油猫
 //2012.8.15
 //Any question, @爱游戏的酱油猫（新浪微博）

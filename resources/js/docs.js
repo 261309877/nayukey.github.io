@@ -1,4 +1,4 @@
-//Docs Js for html5lab.org
+//Docs Js for nayukey.github.io
 //Created By 爱游戏的酱油猫
 //2012.7.9
 //Any question, @爱游戏的酱油猫（新浪微博）
