@@ -4,4 +4,215 @@
  2012.12.3
  Any question, 爱游戏的酱油猫（新浪微博）
  */
- 
+
+.mobile{
+ width:100%;
+ background:url(../images/body-b.png) 0 0 repeat;
+ overflow: hidden;
+}
+
+.mobile .content{
+ width:320px;
+ margin:0 auto;
+}
+
+.mobile .module{
+ margin:10px auto 0 auto;
+ width:318px;
+ min-height:470px;
+ border-radius:3px;
+ border:1px solid #FFFFFF;
+ box-shadow:1px 1px 1px #d9dbdd;
+ background:-webkit-gradient(linear,left top,left bottom,from(#faf9f9),to(#f4eeee));
+}
+
+.mobile header{
+ width:320px;
+ margin:0 auto;
+}
+
+.mobile .header-b .logo{
+ background:-webkit-gradient(linear,left top,left bottom,from(#54575f),to(#1d1e1f));
+ background:-moz-linear-gradient(top,#54575f,#1d1e1f);
+ background:-o-linear-gradient(top,#54575f,#1d1e1f);
+ background:-ms-linear-gradient(top,#54575f,#1d1e1f);
+}
+
+.mobile header .logo{
+ width:310px;
+ height:40px;
+ padding-left:10px;
+}
+
+.mobile header .logo a{
+ font-size:18px;
+ line-height:40px;
+ color:#ffffff;
+}
+
+.mobile nav{
+ background: #CCCCCC;
+}
+
+.mobile .nav-list li{
+ display:inline-block;
+ width:75px;
+ height:30px;
+ background:url(../images/nav-b.png) 0 7px no-repeat;
+}
+
+.mobile .nav-list li:first-child{
+ background:none;
+}
+
+.mobile .nav-list .selected a{
+ border-bottom:3px solid #ff0022;
+}
+
+.mobile .nav-list li a{
+ display:block;
+ margin:0 auto;
+ width:50px;
+ height:27px;
+ line-height:27px;
+ text-align:center;
+ color:#333333;
+}
+
+.mobile .main{
+ margin:0px auto 0 auto;
+ width:320px;
+ min-height:470px;
+}
+
+.mobile .canvas-show{
+ display:none;
+ width:314px;
+ height:496px;
+ border:3px solid #dee3e3;
+ border-radius:3px;
+}
+
+.mobile footer{
+ width:320px;
+ height:40px;
+ border-top:1px solid #e5e5e5;
+ background:-webkit-gradient(linear,left top,left bottom,from(#54575f),to(#333539));
+ background:-moz-linear-gradient(top,#54575f,#333539);
+ background:-o-linear-gradient(top,#54575f,#333539);
+ background:-ms-linear-gradient(top,#54575f,#333539);
+}
+
+.mobile footer p{
+ text-align:center;
+ color:#999999;
+ text-shadow:0 1px 1px #2a2a2a;
+ line-height:40px;
+}
+
+.mobile footer p a{
+ color:#999999;
+ text-shadow:0 1px 1px #2a2a2a;
+}
+
+.mobile footer p span{
+ display: none;
+ margin-left:40px;
+}
+
+/* index */
+.mobile .title-show{
+ margin-left:0 auto;
+ width:320px;
+
+}
+
+.mobile .title-show a{
+ display:block;
+ border-top:1px solid #FFFFFF;
+ border-bottom:1px solid #FFFFFF;
+ box-shadow:0px 1px 0px #d9dbdd;
+ color:#999999;
+ opacity:0.9;
+ background:-webkit-gradient(linear,left top,left bottom,from(#faf9f9),to(#f4eeee));
+ -webkit-transition:opacity 0.5s ease-in-out;
+ transition:opacity 0.5s ease-in-out;
+ padding:5px 10px;
+ max-height:75px;
+ overflow: hidden;
+ text-overflow: ellipsis;
+}
+
+.mobile .title-show a h4{
+ height:24px;
+ line-height:24px;
+ font-size:14px;
+ color:#333333;
+ overflow:hidden;
+}
+
+.mobile .title-show a p{
+ margin:0 auto;
+ font-size:12px;
+ color:#666666;
+ overflow:hidden;
+ line-height:18px;
+}
+
+/* module */
+.mobile .topic{
+ width:300px;
+ margin:0 auto;
+ padding:10px;
+}
+
+.mobile .topic h1{
+ font-size:16px;
+ line-height:30px;
+}
+
+.mobile .topic div{
+ margin-top:10px;
+ border-top:1px solid #CCCCCC;
+}
+
+.mobile .topic p{
+ font-size:14px;
+ margin:15px 0;
+ line-height:22px;
+}
+
+.mobile .topic img{
+ display:block;
+ max-width:300px;
+ margin:15px auto;
+}
+
+/* about */
+.mobile .about-me{
+ width:300px;
+ margin:10px auto 0px auto;
+ padding: 0 10px;
+}
+
+.mobile .friends-webs{
+ width:300px;
+ margin:15px auto;
+ font-size:14px;
+ padding: 0 10px;
+}
+
+.mobile .about-me p,.mobile .friends-webs p{
+ margin:10px auto 0px auto;
+ line-height:18px;
+}
+
+/* list */
+.mobile .list{
+ width:300px;
+ margin:10px auto;
+}
+
+.mobile .list li{
+ margin:10px 0;
+}
