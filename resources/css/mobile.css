@@ -17,7 +17,7 @@
 }
 
 .mobile .module{
- margin:10px auto 0 auto;
+ margin:0px auto 0 auto;
  width:318px;
  min-height:470px;
  border-radius:3px;
@@ -163,7 +163,7 @@
 .mobile .topic{
  width:300px;
  margin:0 auto;
- padding:10px;
+ padding:5px 10px;
 }
 
 .mobile .topic h1{
@@ -172,7 +172,7 @@
 }
 
 .mobile .topic div{
- margin-top:10px;
+ margin-top:3px;
  border-top:1px solid #CCCCCC;
 }
 
