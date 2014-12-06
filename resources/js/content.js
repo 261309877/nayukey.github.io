@@ -21,7 +21,7 @@
 
 		if(json.weixin != undefined){
 			if(window.WeixinJSBridge != undefined){
-				window.wxJsBridgeReady(function(Api){
+				window.WeixinJSBridgeReady(function(Api){
 					// 微信分享的数据
 					var wxData = {
 						//"imgUrl":'http://www.baidufe.com/fe/blog/static/img/weixin-qrcode-2.jpg',
