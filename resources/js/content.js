@@ -27,7 +27,7 @@
 					appid : 0
 				};
 
-
+				alert(1);
 				document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 					// 分享到朋友圈
 					WeixinJSBridge.on('menu:share:timeline', function(argv) {
