@@ -161,15 +161,12 @@
 
 /* module */
 .mobile .topic{
- width:100%;
+ width:90%;
  margin:0 auto;
  padding:5px 10px;
 }
 
 .mobile .topic h1{
- display: block;
- width:100%;
- margin:0 auto;
  font-size:16px;
  line-height:30px;
 }
