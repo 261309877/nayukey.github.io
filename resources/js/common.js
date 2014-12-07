@@ -67,5 +67,6 @@ var H5lab = function(){
 		if (result == null || result.length < 1) {
 			return "";
 		}
+		return result[1];
 	}
 }
