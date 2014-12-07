@@ -4,7 +4,7 @@
 //Any question, @爱游戏的酱油猫（新浪微博）
 
 var data = {
-	'img': 'http://nayukey.github.io/data/pic/eat4.jpg',
+	'img': 'http://nayuki.sinaapp.com/data/pic/eat4.jpg',
 	'link': 'http://nayukey.github.io/content.html?c=eat',
 	'desc': '美味的日本料理啊，日本料理啊',
 	'title': ''
