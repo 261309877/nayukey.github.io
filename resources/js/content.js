@@ -4,10 +4,10 @@
 //Any question, @爱游戏的酱油猫（新浪微博）
 
 var data=var data = {
-	//'img': '图片 URL',
-	//'link': '链接',
-	//'desc': '描述',
-	'title': document.title
+	'img': 'http://nayukey.github.io/resources/images/cat.jpg',
+	'link': 'http://nayukey.github.io/content.html?c=eat',
+	'desc': '这是测试的',
+	'title': '酱油猫测试专用'
 };
 var callback = function() {
 	// 返回的数据并不统一，接口已经尽量统一，我觉得微信公司现在缺 js 程序员
