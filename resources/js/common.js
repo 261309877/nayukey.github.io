@@ -62,9 +62,10 @@ var H5lab = function(){
 		}
 	}
 	//Get Url
-	this.getContentUrl = function(){
-		var url = window.location.href;
-		url = url.substring(url.indexOf("=")+1,url.length);	
-		return url;	
+	this.getContentUrl = function(name) {
+		var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+		if (result == null || result.length < 1) {
+			return "";
+		}
 	}
 }

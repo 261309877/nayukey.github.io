@@ -5,7 +5,7 @@
 
 (function(){
 	var $ = new H5lab();
-	var num = $.getContentUrl();
+	var num = $.getContentUrl("c");
 	var url = Links.content.contentUrl + num + '.txt';
 	$.ajax("get",url,callbacks);
 	function callbacks(json){
@@ -23,11 +23,9 @@
 			if(window.WeixinJSBridge != undefined){
 				var shareData = {
 					desc : '微信分享测试',
-					title : '博客',
-					appid : 0
+					title : '博客'
 				};
 
-				alert(1);
 				document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 					// 分享到朋友圈
 					WeixinJSBridge.on('menu:share:timeline', function(argv) {
@@ -46,7 +44,7 @@
 				function validateShare(res) {
 					if (res.err_msg != 'send_app_msg:cancel' && res.err_msg != 'share_timeline:cancel') {
 						//返回信息判断
-						document.getElementById("topic-content").innerHTML = json.weixin;
+						document.getElementById("topic-content").innerHTML = "1";
 					}
 				}
 			}
