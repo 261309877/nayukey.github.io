@@ -24,7 +24,6 @@ var data = {
 
 		//topic
 		document.title = json.title;
-		data.title = json.title;
 		document.getElementById("topic-title").innerHTML = json.title;
 		document.getElementById("topic-content").innerHTML = json.content;
 
@@ -34,13 +33,15 @@ var data = {
 		};
 
 		try{
+			data.title = json.title;
+			data.img = json.wximg;
+			data.desc = json.desc;
 			wechat('timeline', data, callback);
 			document.getElementById("nav-list").style.display = "none";
 		}catch (e){
 
 		}
-
-
+		
 	}
 	
 })();
