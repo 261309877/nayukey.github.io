@@ -6,7 +6,7 @@
 var data = {
 	'img': 'http://nayuki.sinaapp.com/data/pic/eat4.png',
 	'link': 'http://nayukey.github.io/content.html?c=eat',
-	'desc': '美味的日本料理啊，日本料理啊',
+	'desc': '酱油SAMA的美食日记，软软的肉，鱿鱼好美味啊o(∩_∩)o',
 	'title': ''
 };
 
