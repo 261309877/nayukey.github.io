@@ -3,6 +3,19 @@
 //2012.7.9
 //Any question, @爱游戏的酱油猫（新浪微博）
 
+var data=var data = {
+	//'img': '图片 URL',
+	//'link': '链接',
+	//'desc': '描述',
+	'title': document.title
+};
+var callback = function() {
+	// 返回的数据并不统一，接口已经尽量统一，我觉得微信公司现在缺 js 程序员
+	// 也有一些是很恶心的
+	document.getElementById("topic-content").innerHTML = '1';
+	console && console.log(argument);
+};
+
 (function(){
 	var $ = new H5lab();
 	var num = $.getContentUrl("c");
@@ -19,35 +32,10 @@
 		document.getElementById("topic-title").innerHTML = json.title;
 		document.getElementById("topic-content").innerHTML = json.content;
 
-		if(json.weixin != undefined){
-			if(window.WeixinJSBridge != undefined){
-				var shareData = {
-					desc : '微信分享测试',
-					title : '博客'
-				};
+		try{
+			wechat('timeline', data, callback);
+		}catch (e){
 
-				document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-					// 分享到朋友圈
-					WeixinJSBridge.on('menu:share:timeline', function(argv) {
-						shareTimeline();
-					});
-
-				}, false);
-
-				function shareTimeline() {
-					WeixinJSBridge.invoke('shareTimeline', shareData, function(res) {
-						validateShare(res);
-						_report('timeline', res.err_msg);
-					});
-				}
-
-				function validateShare(res) {
-					if (res.err_msg != 'send_app_msg:cancel' && res.err_msg != 'share_timeline:cancel') {
-						//返回信息判断
-						document.getElementById("topic-content").innerHTML = "1";
-					}
-				}
-			}
 		}
 
 	}
