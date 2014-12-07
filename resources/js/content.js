@@ -4,9 +4,9 @@
 //Any question, @爱游戏的酱油猫（新浪微博）
 
 var data = {
-	'img': 'http://nayuki.sinaapp.com/data/pic/eat4.png',
-	'link': 'http://nayukey.github.io/content.html?c=eat',
-	'desc': '酱油SAMA的美食日记，软软的肉，鱿鱼好美味啊o(∩_∩)o',
+	'img': '',
+	'link': window.location.href,
+	'desc': '',
 	'title': ''
 };
 

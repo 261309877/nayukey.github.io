@@ -25,13 +25,14 @@
 </head>
 <body class="mobile">
 	<script type="text/javascript">
-	(function(){
-		if(window.screen.width < 600){
-			document.body.className = "mobile";
-		}else{
-			document.body.className = "web";
-		}	
-	})();
+        (function(){
+            var ua=navigator.userAgent.toLowerCase();
+            if(/windows/i.test(ua) || /macintosh/i.test(ua)){
+                document.body.className = "web";
+            }else{
+                document.body.className = "mobile";
+            }
+        })();
 	</script>
 	<!-- header -->
     <div class="content header-b">
