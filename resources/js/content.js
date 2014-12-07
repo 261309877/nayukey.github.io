@@ -3,7 +3,7 @@
 //2012.7.9
 //Any question, @爱游戏的酱油猫（新浪微博）
 
-var data=var data = {
+var data = {
 	'img': 'http://nayukey.github.io/resources/images/cat.jpg',
 	'link': 'http://nayukey.github.io/content.html?c=eat',
 	'desc': '这是测试的',
