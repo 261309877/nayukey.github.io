@@ -34,6 +34,7 @@ var callback = function() {
 
 		try{
 			wechat('timeline', data, callback);
+			document.getElementById("nav-list").style.display = "none";
 		}catch (e){
 
 		}
